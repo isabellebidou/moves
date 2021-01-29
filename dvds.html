@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>American Tribal Style bellydance steps in FatChanceBellyDance online videos and DVDs</title>
+		<meta name="keywords" content="belly dance, dance, bellydancing,danse tribale, danse,danza, dance moves list,
+		egyptian, arabic, shimmy,sunanda, hip bumps, sahra turn, wrap around turn,
+		bellydance, ireland, cork, ats, american tribal style, tribal bellydance, sister studio, tribal,
+		">
+		<meta name="description" content="App to find American Tribal Style bellydance steps in FatChanceBellyDance
+		online videos and DVDs ">
+
+		<link href="movesstyles.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+		<!-- Website Design By: isabelle Bidou -->
+		<title>FCBD&#174Style DVDs and Online videos</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+		<meta name="msapplication-TileColor" content="#D83434">
+		<meta name="msapplication-TileImage" content="images/favicon.ico">
+		<link rel="apple-touch-icon-precomposed" href="images/favicon.ico">
+		<link rel="icon" href="images/dancer512.png">
+		<meta name="viewport" content="width=device-width">
+
+		<script type="text/javascript" src="dvdbehaviour.js"></script>
+	</head>
+	<body onload="dvdsinitialize();" >
+
+		<div data-role="page" id="dvdlist" class="page" data-theme="Z">
+			<div id = "header">
+
+				<img src="images/dancer512.png" alt="seagul" id="logo" data-role="logo">
+
+				<h1 id="headerttl"> Which FCBD&#174Style DVD or online video?</h1>
+
+				<p id="infolabel" onclick="toggleInfoWindow()">
+					i
+				</p>
+
+			</div><!-- /header -->
+
+			<div class= "ui-content">
+
+				<div id = "selectDiv" class= "centered">
+					<input id="input" placeholder="type step name" />
+
+				</div>
+				<div id = "listDiv"  onclick="closeInfoWindowIfOn();">
+
+					<p id="promptRefresh" class="centered">
+						If the list does not appear refresh the page :)
+					</p>
+
+					<ol data-role="listview" id = "listview" class="centered"></ol>
+				</div>
+
+				<div id="infodiv">
+
+					<p id="infotext">
+						I can't recommend enough the use of the <a href="https://fcbd.com/product-category/dvds/tribal-basics-workshops-on-dvd/">FCBD DVDs</a> that are available for purchase on the FCBD.com website
+						and I can't recommend enough the <a href="https://fcbd.com/sf-bay-area-classes/skype-lessons-and-on-line-classes/">FCBD online classes </a>available on the PowHow website
+						<br />
+						The DVD's can be used as a 'go-to' reference when you need to see how the steps are broken down. The online classes on the PowHow website are a fantastic help for drilling the steps
+						and are shown in a classroom situation and drilled in combos.
+						I use the two sources for my personal dance education and am happy to share with you this online tool that should help you locate the steps faster.
+						Consider it like a friend sharing her own study notes with you, it is not exhaustive and I decline any responsibility if the information given is not accurate ot updated.
+						I encourage you to give feedback though.
+						The DVD's are divided into several parts.
+						The online classes are divided into levels, 1.x refers to a 'x' video in level 1.
+						<br />
+						'PowHow video: 3.musicality' means 'the FCBD online video of level 3 with the title "musicality" on the PowHow website.
+						<br />
+						If you don't have access to the DVD's or have not subscribed to the online classes you can still use my <a href="http://isabellebidou.com/dance/#about">Dance Moves List apps</a>
+						that will help you find examples of the steps. Note that those steps are not broken down in the free resources on youTube.
+						&nbsp;&nbsp;&nbsp;
+						<a href="mailto:isa.bidou@gmail.com?subject=feedback">email me</a>
+
+					</p>
+					<p id="iconscopy">
+						Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+					</p>
+					<h6 class="copy" id="copy"></h6>
+				</div>
+
+			</div>
+
+		</div><!-- /list page -->
+
+	</body>
+</html>

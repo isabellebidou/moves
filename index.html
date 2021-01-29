@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>American Tribal Style bellydance steps in youTube videos </title>
+		<meta name="keywords" content="belly dance, dance, bellydancing,danse tribale, danse,danza,
+		dance moves list,
+		egyptian, arabic, shimmy,sunanda, hip bumps, sahra turn, wrap around turn,
+		double bump, single bump, water pot, chico, meduza,
+		bellydance, ats, american tribal style, tribal bellydance, sister studio, tribal, ">
+		<meta name="description" content="App to find American Tribal Style bellydance steps in youTube videos ">
+		<link href="movesstyles.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+		<!-- Website Design By: isabelle Bidou -->
+		<title>FCBD&#174Style moves</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+		<meta name="msapplication-TileColor" content="#D83434">
+		<meta name="msapplication-TileImage" content="images/favicon.ico">
+		<link rel="apple-touch-icon-precomposed" href="images/favicon.ico">
+		<link rel="icon" href="images/dancer512.png">
+		<meta name="viewport" content="width=device-width">
+		<script type="text/javascript" src="behaviour.js"></script>
+	</head>
+	<body onload="initialize();" >
+
+		<div data-role="page" id="list" class="page" data-theme="Z">
+			<div id = "header">
+
+				<img src="images/dancer512.png" alt="seagul" id="logo" data-role="logo">
+
+				<h1 id="headerttl">FCBD&#174Style moves list</h1>
+				<div class ="centered" id="nav" data-role="navigation" >
+					<ul class="menu"  class ="centered">
+						<li class="menu">
+							<a class="menu" id="on" href="#list">List</a>
+						</li>
+						<li class="menu">
+							<a class="menu" href="#video">Video</a>
+						</li>
+						<li class="menu">
+							<a class="menu" href="#about">About</a>
+						</li>
+
+					</ul>
+					<hr />
+
+				</div>
+
+			</div><!-- /header -->
+
+			<div class= "ui-content">
+
+				<div id = "selectDiv" class= "centered">
+					<label class="selectlabel" id = "categoriesSelectLabel">
+						<select id="categoriesSelect" >
+							<!-- <option value ="All Categories" id = "All Categories">All Categories</option>-->
+						</select></label>
+					<label class="selectlabel" id = "familiesSelectLabel">
+						<select id="familiesSelect" >
+							<!-- <option value ="All Families" id = "All Families">All Families</option>-->
+						</select></label>
+					<button id = "okButton" onclick="showSelected();">
+						OK
+					</button>
+
+				</div>
+				<div id = "listDiv">
+
+					<p id="promptRefresh" class="centered">
+						If the list does not appear refresh the page :)
+					</p>
+
+					<ol data-role="listview" id = "listview" class="centered"></ol>
+				</div>
+
+			</div>
+
+			<div data-theme="C">
+
+				<div data-role="navbar" class ="navbtm" >
+
+					<ul>
+						<li class="menu">
+							<a class="menu" id="onbtm"  > List </a>
+						</li>
+						<li class="menu">
+							<a class="menu" href="#video">Video</a>
+						</li>
+						<li class="menu">
+							<a class="menu" href="#about">About</a>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+		</div><!-- /list page -->
+		<div data-role="page" id="video" class="page" data-theme="Z">
+			<div id = "header">
+
+				<img src="images/dancer512.png" alt="logo" id="logo" data-role="logo"/>
+				<h1 id="headerttl">Videos on YouTube</h1>
+
+				<div class ="centered" id="nav" data-role="navigation" >
+
+					<ul class="menu">
+						<li class="menu">
+							<a class="menu"  href="#list">List</a>
+						</li>
+
+						<li class="menu">
+							<a class="menu" id="on" href="#video">Video</a>
+						</li>
+						<li class="menu">
+							<a class="menu"  href="#about">About</a>
+						</li>
+					</ul>
+					<hr />
+				</div>
+
+			</div>
+
+			<div data-role="content">
+
+				<iframe  width="420" height="315" id = "player" class="centered"  frameborder="0" allowfullscreen></iframe>
+				<div id="id01"></div>
+
+			</div>
+
+			<div data-role="navbar" class ="navbtm" >
+
+				<ul>
+					<li class="menu">
+						<a class="menu"  href="#list"> List </a>
+					</li>
+					<li class="menu">
+						<a class="menu" id="onbtm"> Video </a>
+					</li>
+					<li class="menu">
+						<a class="menu"   href="#about"> About </a>
+					</li>
+
+				</ul>
+
+			</div>
+
+		</div><!-- /video page -->
+
+		<div data-role="page" id="about" class="page" data-theme="Z">
+			<div id="fb-root"></div>
+			<script>
+				( function(d, s, id) {
+						var js, fjs = d.getElementsByTagName(s)[0];
+						if (d.getElementById(id))
+							return;
+						js = d.createElement(s);
+						js.id = id;
+						js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.10";
+						fjs.parentNode.insertBefore(js, fjs);
+					}(document, 'script', 'facebook-jssdk'));
+			</script>
+			<div id = "header">
+
+				<!-- banner -->
+				<img src="images/dancer512.png" alt="dancer" id="logo" data-role="logo">
+				<h1 id="headerttl">About</h1>
+
+				<div class ="centered" id="nav" data-role="navigation" >
+					<ul class="menu">
+						<li class="menu">
+							<a class="menu"  href="#list">List</a>
+						</li>
+						<li class="menu">
+							<a class="menu"  href="#video">Video</a>
+						</li>
+						<li class="menu">
+							<a class="menu" id="on" >About</a>
+						</li>
+
+					</ul>
+					<hr />
+				</div>
+
+				<!-- end of banner -->
+			</div>
+			<div id="aboutDiv" >
+
+				<p id="aboutP"class="centered">
+					Dear FCBD&#174Style Dancer!
+					<br />
+					This web app was built in an attempt to make your life easier and enable you to see examples of FCBD&#174Style steps in performance condition.
+					just click on the name in the list and watch the youTube video and the move should start straight away.
+					The selection was made using the fantastic work of <a href="http://www.etoiledessables.com/pdf/Liste_mouvements_videos_ATS.pdf">Marwen/Julie de St Blanquat - Sister Studio FCBD</a>
+					A big thank you Ladies! and a big thank you to the dancers!
+					<br />
+					By no means it replaces the <a href="https://fcbd.com/product-category/dvds/tribal-basics-workshops-on-dvd/">FCBD DVD's</a> or
+					the <a href="https://fcbd.com/sf-bay-area-classes/skype-lessons-and-on-line-classes/">FCBD online classes </a>
+					available on the PowHow website, where steps are broken down in classroom situation.
+					<br />
+					I have personnaly purchased the download versions of DVD 1, 4, 7 and 9 and have subscribed to level 1,2
+					and 3 or the Online videos.
+					<br />
+					I have listed the steps they contain in a searchable list to make it easier to find on which DVD or in which PowHow online Video a given step is broken down.
+					It is not exhaustive and I decline any responsibility if the information given is not accurate. You may use the link below to access this other web app
+					<br />
+					<a href="dvds.html" target="_blank">Which DVD or online Video contains the instructions for a given step?</a>
+					<br />
+
+					&nbsp;&nbsp;&nbsp;
+					<a id="mail" href="mailto:isa.bidou@gmail.com?subject=feedback">email me</a>
+					&nbsp;&nbsp;&nbsp;
+					<br />
+					<a id="contact" href="http://isabellebidou.com" target="_blank">Who am I?</a>
+					<div class="fb-share-button" data-href="http://isabellebidou.com/dance/#about" data-layout="button" data-size="small" data-mobile-iframe="true">
+						<a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fisabellebidou.com%2Fdance%2F%23about&amp;src=sdkpreparse">Share</a>
+					</div>
+				</p>
+				<!--
+				<p id ="linksToAppsDiv" class="centered" >
+					<a id="googlePlay"class="toapps" href='http://play.google.com/store/apps/details?id=com.bidou.isabelle.atsmoves&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img  style= "display:inline-block;no-repeat;overflow:hidden;width:165px;"alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'linksToApps/> </a>
+
+					<a id="appStore"class="toapps" href="https://geo.itunes.apple.com/ie/app/riverss-edge/id1117402980?mt=8" style="margin-top:30px;margin-left: 60px;overflow:hidden;background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_appstore-lrg.svg) no-repeat;width:165px;height:40px;"> </a>
+				</p>-->
+			</div>
+
+			<div id= "icons"class="centered">
+				Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+			</div>
+
+			<div data-role="navbar" class ="navbtm" >
+
+				<ul>
+					<li class="menu">
+						<a class="menu"  href="#list"> List </a>
+					</li>
+					<li class="menu">
+						<a class="menu"   href="#video"> Video </a>
+					</li>
+					<li class="menu">
+						<a class="menu"  id="onbtm" > About </a>
+					</li>
+
+				</ul>
+
+			</div>
+
+		</div><!-- /about page -->
+
+	</body>
+</html>
