@@ -727,15 +727,38 @@ myJson = [
 ];
 
 var listview;
+
+function getEmbedUrl(youtubeUrl) {
+  let embedUrl = "https://www.youtube.com/embed?listType=playlist&list=";
+  
+  if (youtubeUrl.includes("/channel/")) {
+    // Direct channel ID
+    const parts = youtubeUrl.split("/");
+    const channelId = parts[parts.indexOf("channel") + 1];
+    embedUrl += channelId;
+  } else if (youtubeUrl.includes("/user/")) {
+    // username → modern YouTube requires API to get channel ID,
+    // but for many cases, the old uploads style still works
+    const parts = youtubeUrl.split("/");
+    const username = parts[parts.indexOf("user") + 1];
+    embedUrl = `https://www.youtube.com/embed/?listType=user_uploads&list=${username}`;
+  }
+  
+  // Optional: clean embed parameters
+  embedUrl += "&rel=0&modestbranding=1";
+  return embedUrl;
+}
 function initialize() {
   //http://www.youtube.com/embed/?listType=user_uploads&list=FatChanceBellyDance
   document.getElementById("promptRefresh").style.visibility = "hidden";
   player = document.getElementById("player");
   //https://www.youtube.com/user/FatChanceBellyDance
-  player.setAttribute(
+
+  player.setAttribute("src", getEmbedUrl("https://www.youtube.com/user/FatChanceBellyDance"));
+ /* player.setAttribute(
     "src",
-    "http://www.youtube.com/embed/?listType=user_uploads&list=FatChanceBellyDance"
-  );
+    "https://www.youtube.com/embed/?listType=user_uploads&list=FatChanceBellyDance"
+  );*/
   listview = document.getElementById("listview");
   console.log("initialize");
   categorySpinner = document.getElementById("categoriesSelect");
@@ -793,8 +816,9 @@ function myFunction(arr) {
     var ststr = url.split("&t=")[1];
     var st = parseInt(ststr.charAt(0) * 60) + parseInt(ststr.substr(2, 3));
     // console.log(st);
-    var embedUrl = "http://www.youtube.com/embed/" + id + "?start=" + st;
-    //console.log(embedUrl);
+    var embedUrl = "https://www.youtube.com/embed/" + id + "?start=" + st;
+
+    console.log(embedUrl);
     moves.push(new Move(id, embedUrl, name, categoryStr, familyStr, url));
   }
 
@@ -802,18 +826,20 @@ function myFunction(arr) {
   makeSpinner(families, familySpinner);
   selectedFamily = "All Families";
   familySpinner.value = "All Families";
-  $("#familiesSelect").selectmenu("refresh");
+  //$("#familiesSelect").selectmenu("refresh");
+  document.getElementById("familiesSelect").dispatchEvent(new Event("change"));
   selectedCategory = "All Categories";
   categorySpinner.value = "All Categories";
-  $("#categoriesSelect").selectmenu("refresh");
-
+  //$("#categoriesSelect").selectmenu("refresh");
+  document.getElementById("categoriesSelect").dispatchEvent(new Event("change"));
   window.onpopstate = function () {
     checkPlayerForVideo();
   };
 
   familySpinner.onchange = function () {
     selectedFamily = familySpinner.value;
-    $("#familiesSelect").selectmenu("refresh");
+    //$("#familiesSelect").selectmenu("refresh");
+    document.getElementById("familiesSelect").dispatchEvent(new Event("change"));
 
     var i = 0;
 
@@ -848,7 +874,8 @@ function myFunction(arr) {
   };
   categorySpinner.onchange = function () {
     selectedCategory = categorySpinner.value;
-    $("#categoriesSelect").selectmenu("refresh");
+   // $("#categoriesSelect").selectmenu("refresh");
+    document.getElementById("categoriesSelect").dispatchEvent(new Event("change"));
 
     var newFamilies = [];
 
@@ -869,9 +896,12 @@ function myFunction(arr) {
       }
     }
 
-    $("#familiesSelect").empty();
+    //$("#familiesSelect").empty();
+    
+    document.getElementById("familiesSelect").innerHTML = "";
     makeSpinner(newFamilies, familySpinner);
-    $("#familiesSelect").selectmenu("refresh");
+   // $("#familiesSelect").selectmenu("refresh");
+    document.getElementById("familiesSelect").dispatchEvent(new Event("change"));
     familySpinner.value = selectedFamily;
   };
   displayList(moves);
@@ -930,9 +960,12 @@ function showSelected() {
   }
 
   displayList(newMoves);
-  $("#categoriesSelect").selectmenu("refresh");
+ // $("#categoriesSelect").selectmenu("refresh");
+  document.getElementById("categoriesSelect").dispatchEvent(new Event("change"));
+  
 
-  $("#familiesSelect").selectmenu("refresh");
+ // $("#familiesSelect").selectmenu("refresh");
+  document.getElementById("familiesSelect").dispatchEvent(new Event("change"));
 }
 
 function displayList(arr) {
@@ -974,31 +1007,37 @@ function checkIfAlreadyInArray(element, array) {
   return result;
 }
 
-function Move(mId, mEmbedUrl, mName, mCategory, mFamily, mUrl) {
-  this.id = mId;
-  this.embedUrl = mEmbedUrl;
-  this.name = mName;
-  this.category = mCategory;
-  this.family = mFamily;
-  this.url = mUrl;
+class Move {
+  constructor(mId, mEmbedUrl, mName, mCategory, mFamily, mUrl) {
+    this.id = mId;
+    this.embedUrl = mEmbedUrl;
+    this.name = mName;
+    this.category = mCategory;
+    this.family = mFamily;
+    this.url = mUrl;
+  }
 }
 
-function Category(categoryStr) {
-  this.name = categoryStr;
-  this.option = document.createElement("option");
+class Category {
+  constructor(categoryStr) {
+    this.name = categoryStr;
+    this.option = document.createElement("option");
 
-  this.option.value = this.name;
-  this.option.text = categoryStr;
-  this.option.id = categoryStr;
+    this.option.value = this.name;
+    this.option.text = categoryStr;
+    this.option.id = categoryStr;
+  }
 }
 
-function Family(familyStr) {
-  this.name = familyStr;
-  this.option = document.createElement("option");
+class Family {
+  constructor(familyStr) {
+    this.name = familyStr;
+    this.option = document.createElement("option");
 
-  this.option.value = this.name;
-  this.option.text = familyStr;
-  this.option.id = familyStr;
+    this.option.value = this.name;
+    this.option.text = familyStr;
+    this.option.id = familyStr;
+  }
 }
 
 function sortByAlphabeticalOrderOfStringProperty(array, stringProperty) {
@@ -1130,13 +1169,19 @@ function findCatByFam(f) {
   return c;
 }
 
+
+
+
 function play(row) {
   var index = rows.indexOf(row);
   var move = usedMovesList[index];
 
-  player.setAttribute("src", move.embedUrl);
-  //	description.innerHTML = "selection: "+ move.name;
-  window.location.href = "#video";
+console.log(move.embedUrl)
+player.setAttribute("src", move.embedUrl);
+
+description.innerHTML = "selection: "+ move.name;
+ // window.location.href = "#video";
+  window.location.hash = "video";
 }
 
 function checkPlayerForVideo() {
@@ -1151,7 +1196,31 @@ function makeSpinner(array, spinner) {
   }
 }
 
-/*function useTheme(){
+
+function copyright(){
+	var copys = document.getElementsByClassName("copy");
+console.log('copy');
+	var now = new Date();
+	var year = addZero(now.getFullYear(), 2);
+	var i = 0;
+
+	for (i; i < copys.length; i++) {
+ 
+		copys[i].innerHTML = "Copyright: " + year;
+
+	}
+
+}
+function addZero(x, n) {
+	if (x.toString().length < n) {
+		x = "0" + x;
+	}
+	return x;
+}
+
+
+function useTheme(){
+  console.log('useTheme');
 
  switch(theme) {
  case "light":
@@ -1182,4 +1251,4 @@ function makeSpinner(array, spinner) {
  default:
  break;
  }
- }*/
+ }
