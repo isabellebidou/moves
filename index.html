@@ -1,74 +1,87 @@
 <!DOCTYPE html>
 <html>
-
-	<head>
-		<title>American Tribal Style bellydance steps in youTube videos </title>
-		<meta name="keywords" content="belly dance, dance, bellydancing,danse tribale, danse,danza,
-		dance moves list,
-		egyptian, arabic, shimmy,sunanda, hip bumps, sahra turn, wrap around turn,
-		double bump, single bump, water pot, chico, meduza,
-		bellydance, ats, american tribal style, tribal bellydance, sister studio, tribal, ">
-		<meta name="description" content="App to find American Tribal Style bellydance steps in youTube videos ">
-		<link href="movesstyles.css" rel="stylesheet" type="text/css" />
-		
-		
-
-		<!-- Website Design By: isabelle Bidou -->
-		<title>FCBD&#174Style moves</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-
-		<meta name="msapplication-TileColor" content="#D83434">
-		<meta name="msapplication-TileImage" content="images/favicon.ico">
-		<link rel="apple-touch-icon-precomposed" href="images/favicon.ico">
-		<link rel="icon" href="images/dancer512.png">
-		<meta name="viewport" content="width=device-width">
-		<script type="text/javascript" src="behaviour.js"></script>
-	</head>
-	<body onload="initialize();copyright();">
-
-		<div class="page">
-			<div id = "header">
-
-				<img src="images/dancer512.png" alt="seagul" id="logo" data-role="logo">
-
-				<h1 id="headerttl">FCBD&#174Style moves list</h1>
-				<a id = 'aboutlink'href="https://isabellebidou.com/dance/about.html">about</a>
-			</div><!-- /header -->
-
-			<div >
-
-				<div id = "selectDiv" class= "centered">
-					<label class="selectlabel" id = "categoriesSelectLabel">
-						<select id="categoriesSelect" >
-							<!-- <option value ="All Categories" id = "All Categories">All Categories</option>-->
-						</select></label>
-					<label class="selectlabel" id = "familiesSelectLabel">
-						<select id="familiesSelect" >
-							<!-- <option value ="All Families" id = "All Families">All Families</option>-->
-						</select></label>
-					<button id = "okButton" onclick="showSelected();">
-						OK
-					</button>
-
-				</div>
-				<div id = "listDiv">
-					<p id="promptRefresh" class="">
-						If the list does not appear refresh the page :)
-					</p>
-
-					<ol  id = "listview" class="centered"></ol>
-				</div>
-
-				<div data-role="content">
-
-					<iframe  width="420" height="315" id = "player"   frameborder="0" allowfullscreen class="right" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
-					<div id="id01"></div>
-			
-				</div>
-				
-			</div>
-
-		</div><!-- /list page -->
-		<h6 class="copy"></h6>
-	</body>
+  <head>
+    <title>isabelle Bidou</title>
+    <meta charset="UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"
+      integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk="
+      crossorigin="anonymous"
+    ></script>
+    <meta name="msapplication-TileColor" content="#D83434">
+	<meta name="msapplication-TileImage" content="homepageimages/favicon.ico">
+	<link rel="apple-touch-icon-precomposed" href="homepageimages/favicon.ico">
+	<link rel="icon" href="homepageimages/dancer512.png">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="/scripts/app.css" type="text/css" />
+  </head>
+  <body>
+    <div id="container">
+      <div class="header">
+        <a class="logo h1 headertitle" href="/">isabellebidou.com</a>
+        
+        
+        <a class="nav_ul" href="https://aboutisabellebidou.d11rlor5kdnu66.amplifyapp.com/">about</a>
+        
+      </div>
+      <div class="maincontent">
+          
+        <div class="grid-container">
+            <a class="div tooltip" href="https://izzyspeakenglish.com"
+            ><img
+              class="photothumbnail"
+              src="/homepageimages/teaching.png"
+              alt="Teaching Platform"
+            /><span class="tooltiptext"
+              >AI Powered Platform that lets you generate on demand custom grammar exercice, test your English pronunciation and spelling with immediate feedback </span
+            ></a
+          >
+          
+        <a class="div tooltip" href="https://booking.d2xi16c16knu7i.amplifyapp.com/"
+            ><img
+              class="photothumbnail"
+              src="/homepageimages/booking.png"
+              alt="googlecalenderbooking"
+            /><span class="tooltiptext"
+              >Book a google appointment to discuss English professional coaching options </span
+            ></a
+          >
+          <a class="div tooltip" href="/moves"
+            ><img
+              class="photothumbnail"
+              src="/homepageimages/dml.png"
+              alt="Dance Moves List"
+            /><span class="tooltiptext"
+              >FCBD@Style moves in YouTube videos</span
+            ></a
+          ><a class="div tooltip" href="/bio"
+            ><img
+              class="photothumbnail"
+              src="/homepageimages/db.png"
+              alt="Isabelle Bidou Dance Bio"
+            /><span class="tooltiptext">My dance bio :)</span></a
+          ><a class="div tooltip" href="https://main.d29rzids7y36ze.amplifyapp.com/"
+            ><img
+              class="photothumbnail"
+              src="/homepageimages/gallery.png"
+              alt="Isabelle Bidou Photo Gallery"
+            /><span class="tooltiptext">My photos :)</span></a
+          ><a
+            class="div tooltip"
+            href="/dvds"
+            ><img
+              class="photothumbnail"
+              src="/homepageimages/wdvd.png"
+              alt="Which FCBD@Style dvd?"
+            /><span class="tooltiptext"
+              >my dance notes to help you find where to find step instructions
+              on the FCBD@Style dvds
+            </span></a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="footer"><p>Isabelle Bidou - copyright 2026</p></div>
+  </body>
 </html>
