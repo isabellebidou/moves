@@ -239,7 +239,8 @@ p {
   align-content: center;
   grid-template-columns: auto auto auto auto;
   grid-gap: 3em;
-  padding-top: 3%;
+  padding-top: 5%;
+  padding-bottom: 13%;
 
 
 
@@ -343,7 +344,7 @@ a.deletebutton:active {
 @media screen and (max-width: 800px) and (orientation: portrait) {
     .maincontent{
         height: 90%;
-         padding-top: 2em;
+         padding-top: 1.4em;
 
     }
   
@@ -357,7 +358,12 @@ a.deletebutton:active {
     padding-top: 2em;
 
   }
+.headertitle{
+  
+  font-size: medium;
 
+
+}
 
 }
 
