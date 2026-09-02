@@ -55,8 +55,8 @@ li.div {
 
 .photothumbnail {
 
-  height: 189px;
-  width: 241px;
+  height: 165px;
+  width: 250px;
   display: flex;              /* ✅ */
   justify-content: center;    /* horizontal center */
   align-items: center;        /* vertical center */ 
