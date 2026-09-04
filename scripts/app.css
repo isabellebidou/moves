@@ -345,11 +345,7 @@ a.deletebutton:active {
 
 }
 @media screen and (max-width: 800px) and (orientation: portrait) {
-    .maincontent{
-        height: 90%;
-         padding-top: 1.4em;
 
-    }
   
   .grid-container {
     color: rgba(248, 245, 245, 0.89);
@@ -368,6 +364,17 @@ a.deletebutton:active {
 
 }
 
+.links_list{
+  font-size: x-large;
+  line-height: 2em;
 
+}
+}
+@media screen and (max-width: 800px) and (orientation: landscape) {
+.links_list{
+  font-size: x-large;
+  line-height: 2em;
+
+}
 }
 
