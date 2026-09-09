@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://isabellebidou.com/sitemap.xml
+Sitemap: https://articles.isabellebidou.com/sitemap.xml
+Sitemap: https://photos.isabellebidou.com/sitemap.xml
+Sitemap: https://cheatsheet.isabellebidou.com/sitemap.xml
