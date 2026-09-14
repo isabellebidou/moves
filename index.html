@@ -13,6 +13,8 @@
 
   gtag('config', 'G-YKYCPDL3YL');
 </script>
+
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"
     integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk=" crossorigin="anonymous"></script>
@@ -22,6 +24,7 @@
   <link rel="icon" href="homepageimages/dancer512.png" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="stylesheet" href="/scripts/app.css" type="text/css" />
+  <link rel="stylesheet" href="/scripts/chat.css" type="text/css" />
 </head>
 
 <body>
@@ -83,6 +86,33 @@
       <p>Isabelle Bidou - copyright  <script>document.write(new Date().getFullYear())</script></p>
     </div>
 
+
+<div id="ai-chat-widget">
+  <button id="ai-chat-toggle" aria-label="Open Isabelle AI Assistant">
+    Chat with Isabelle AI
+  </button>
+
+  <div id="ai-chat-panel" hidden>
+    <iframe
+      src="https://isabellebidou-isabelle-ai-assistant.hf.space"
+      title="Isabelle AI Assistant"
+      loading="lazy"
+      allow="clipboard-write"
+    ></iframe>
+  </div>
+</div>
+<script>
+  const toggle = document.getElementById("ai-chat-toggle");
+  const panel = document.getElementById("ai-chat-panel");
+
+  toggle.addEventListener("click", () => {
+    console.log("clicked on");
+    // Toggle the hidden property of the panel (true to false, false to true
+    const isOpen = !panel.hidden;
+    panel.hidden = isOpen;
+    toggle.textContent = isOpen ? "Chat with Isabelle AI" : "Close chat";
+  });
+</script>
 
 
 </body>
